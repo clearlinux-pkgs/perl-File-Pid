@@ -4,14 +4,13 @@
 #
 Name     : perl-File-Pid
 Version  : 1.01
-Release  : 9
+Release  : 10
 URL      : https://cpan.metacpan.org/authors/id/C/CW/CWEST/File-Pid-1.01.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CW/CWEST/File-Pid-1.01.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libf/libfile-pid-perl/libfile-pid-perl_1.01-2.debian.tar.xz
-Summary  : No detailed summary available
+Summary  : Pid File Manipulation
 Group    : Development/Tools
 License  : Artistic-1.0 GPL-1.0
-Requires: perl-File-Pid-license = %{version}-%{release}
 BuildRequires : buildreq-cpan
 BuildRequires : perl(Class::Accessor::Fast)
 
@@ -31,29 +30,12 @@ if ( my $num = $pidfile->running ) {
 die "Already running: $num\n";
 }
 
-%package dev
-Summary: dev components for the perl-File-Pid package.
-Group: Development
-Provides: perl-File-Pid-devel = %{version}-%{release}
-
-%description dev
-dev components for the perl-File-Pid package.
-
-
-%package license
-Summary: license components for the perl-File-Pid package.
-Group: Default
-
-%description license
-license components for the perl-File-Pid package.
-
-
 %prep
 %setup -q -n File-Pid-1.01
 cd ..
 %setup -q -T -D -n File-Pid-1.01 -b 1
 mkdir -p deblicense/
-mv %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/File-Pid-1.01/deblicense/
+cp -r %{_topdir}/BUILD/debian/* %{_topdir}/BUILD/File-Pid-1.01/deblicense/
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -91,12 +73,3 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/File/Pid.pm
-
-%files dev
-%defattr(-,root,root,-)
-/usr/share/man/man3/File::Pid.3
-
-%files license
-%defattr(0644,root,root,0755)
-/usr/share/package-licenses/perl-File-Pid/deblicense_copyright
