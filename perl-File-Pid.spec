@@ -4,7 +4,7 @@
 #
 Name     : perl-File-Pid
 Version  : 1.01
-Release  : 12
+Release  : 13
 URL      : https://cpan.metacpan.org/authors/id/C/CW/CWEST/File-Pid-1.01.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CW/CWEST/File-Pid-1.01.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libf/libfile-pid-perl/libfile-pid-perl_1.01-2.debian.tar.xz
@@ -90,7 +90,7 @@ make TEST_VERBOSE=1 test
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/perl-File-Pid
-cp %{_builddir}/File-Pid-1.01/deblicense/copyright %{buildroot}/usr/share/package-licenses/perl-File-Pid/c7cc5229fd3f8db8bf5627b1453f3d91bf8dcfcc
+cp %{_builddir}/debian/copyright %{buildroot}/usr/share/package-licenses/perl-File-Pid/c7cc5229fd3f8db8bf5627b1453f3d91bf8dcfcc
 if test -f Makefile.PL; then
 make pure_install PERL_INSTALL_ROOT=%{buildroot} INSTALLDIRS=vendor
 else
@@ -114,4 +114,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.1/File/Pid.pm
+/usr/lib/perl5/vendor_perl/5.30.2/File/Pid.pm
