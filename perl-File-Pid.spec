@@ -4,7 +4,7 @@
 #
 Name     : perl-File-Pid
 Version  : 1.01
-Release  : 14
+Release  : 15
 URL      : https://cpan.metacpan.org/authors/id/C/CW/CWEST/File-Pid-1.01.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CW/CWEST/File-Pid-1.01.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libf/libfile-pid-perl/libfile-pid-perl_1.01-2.debian.tar.xz
@@ -114,4 +114,4 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.30.3/File/Pid.pm
+/usr/lib/perl5/vendor_perl/5.32.1/File/Pid.pm
