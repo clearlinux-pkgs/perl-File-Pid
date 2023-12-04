@@ -5,7 +5,7 @@
 #
 Name     : perl-File-Pid
 Version  : 1.01
-Release  : 24
+Release  : 25
 URL      : https://cpan.metacpan.org/authors/id/C/CW/CWEST/File-Pid-1.01.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/C/CW/CWEST/File-Pid-1.01.tar.gz
 Source1  : http://http.debian.net/debian/pool/main/libf/libfile-pid-perl/libfile-pid-perl_1.01-2.debian.tar.xz
